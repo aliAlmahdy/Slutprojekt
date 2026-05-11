@@ -43,8 +43,7 @@ header .logo {
     padding: 5px 10px;
 }
 
-.global-menu li a:hover,
-.global-menu li a:focus {
+.global-menu li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
@@ -94,10 +93,18 @@ ul {
     padding-left: 20px;
 }
 
-.image-grid {
+/* STARTSIDA (3 i rad) */
+body.index .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+/* SERIE-SIDOR (under varandra) */
+body.series .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .image-grid img {
@@ -107,6 +114,12 @@ ul {
     border-radius: 8px;
 }
 
+/* series större bilder */
+body.series .image-grid img {
+    height: 300px;
+}
+
+/* text under bilder */
 .image-grid .model {
     text-align: center;
 }
@@ -117,19 +130,7 @@ ul {
     color: #003399;
 }
 
-body.index .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-body.index .image-grid img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
+/* tabell */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -145,6 +146,7 @@ th, td {
     text-align: left;
 }
 
+/* form */
 form label {
     display: block;
     margin: 8px 0 3px 0;
@@ -157,51 +159,17 @@ form input, form select, form button {
     max-width: 300px;
 }
 
+/* mobil */
 @media screen and (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
-    }
-
-    header .header-top {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header .logo {
-        width: 50px;
     }
 
     .global-menu {
         flex-direction: column;
     }
 
-    body.index .image-grid,
-    .image-grid {
+    body.index .image-grid {
         grid-template-columns: 1fr;
     }
-}
-
-body.series .image-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-body.series .image-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}body.series .image-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-body.series .image-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-}h1, h2, h3, h4, h5, h6 {
-    font-size: 24px;
 }
